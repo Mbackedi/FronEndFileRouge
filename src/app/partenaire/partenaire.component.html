@@ -1,0 +1,25 @@
+<div class="panel panel-default">
+    <div class="panel-heading">Liste des partenaires</div>
+    <div class="panel-body">
+        <table class="table table-dark">
+            <tr>
+                <th>id</th>
+                <th>nom_entreprise</th>
+                <th>rs</th>
+                <th>ninea</th>
+                <th>adresse</th>
+                <th>statut</th>
+            </tr>
+            <tr *ngFor="let part of partenaires">
+                <td>{{part.id}}</td>
+                <td>{{part.nom_entreprise}}</td>
+                <td>{{part._rs}}</td>
+                <td>{{part._ninea}}</td>
+                <td>{{part._adresse}}</td>
+                <td>{{part._statut}}</td>
+
+
+            </tr>
+        </table>
+    </div>
+</div>

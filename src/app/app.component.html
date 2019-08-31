@@ -10,7 +10,7 @@
           <span class="caret"></span></a>
         <ul class="dropdown-menu">
           <li *ngIf="isAdmin()"><a routerLink="/partenaire">Lister Partenaire</a></li>
-          <li *ngIf="isUser()"><a routerLink="/partenaire "></a>Ajout partenaire</li>
+          <li *ngIf="isAdmin()"><a routerLink="/user"></a>Ajout Utilisateur</li>
           <li *ngIf="isAdmin()"><a routerLink="/compte">Créer Compte</a></li>
 
         </ul>

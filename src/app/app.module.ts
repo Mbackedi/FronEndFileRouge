@@ -11,6 +11,7 @@ import { LoginComponent } from './login/login.component';
 import { FormsModule } from '@angular/forms';
 import { AuthentificationService } from './authentification.service';
 import { PartenaireService } from './partenaire.service';
+import { UserService } from './user.service';
 
 
 @NgModule({
@@ -26,7 +27,7 @@ import { PartenaireService } from './partenaire.service';
     AppRoutingModule, HttpClientModule, FormsModule
   ],
   providers: [
-    AuthentificationService, PartenaireService
+    AuthentificationService, PartenaireService, UserService
   ],
   bootstrap: [AppComponent]
 })

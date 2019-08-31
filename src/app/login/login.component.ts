@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
 
   constructor(private authService: AuthentificationService,
-    private router:Router) { }
+    private router: Router) { }
 
   ngOnInit() {
   }
@@ -25,10 +25,10 @@ export class LoginComponent implements OnInit {
       })
   }
 
-  isAdmin(){
+  isAdmin() {
     return this.authService.isAdmin();
   }
-  isUser(){
+  isUser() {
     return this.authService.isUser();
   }
 

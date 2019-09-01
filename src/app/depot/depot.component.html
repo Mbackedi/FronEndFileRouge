@@ -1,0 +1,23 @@
+<div class="col-md-6">
+    <div class="panel panel-default">
+        <div class="panel-heading">Depot</div>
+        <div class="panel-body">
+            <form #f="ngForm" (ngSubmit)="onsubmit(f.value)">
+                <div class="form-group">
+                    <label class="control-label">Montant</label>
+                    <input type="number" #montant  name="montant" ngModel class="form-control">
+                </div>
+
+                <div class="form-group row col-6 col-md-push-4 offset-md-3">
+                    <label for="inputPassword3" class="col-sm-2 col-form-label">Compte</label>
+                    <div class="col">
+                        <select class="form-control" #compte ngModel name="compte">
+                            <option *ngFor="let c of comptes" value="{{c.id}}">{{c.NumCompte}}</option>
+                        </select>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-default">Ajouter</button>
+            </form>
+        </div>
+    </div>
+</div>

@@ -14,6 +14,8 @@ import { PartenaireService } from './partenaire.service';
 import { UserService } from './user.service';
 import { UtilisateurComponent } from './utilisateur/utilisateur.component';
 import { UtilisateurService } from './utilisateur.service';
+import { DepotComponent } from './depot/depot.component';
+import { DepotService } from './depot.service';
 
 
 @NgModule({
@@ -23,14 +25,15 @@ import { UtilisateurService } from './utilisateur.service';
     PartenaireComponent,
     CompteComponent,
     LoginComponent,
-    UtilisateurComponent
+    UtilisateurComponent,
+    DepotComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule, HttpClientModule, FormsModule
   ],
   providers: [
-    AuthentificationService, PartenaireService, UserService, UtilisateurService
+    AuthentificationService, PartenaireService, UserService, UtilisateurService, DepotService
   ],
   bootstrap: [AppComponent]
 })

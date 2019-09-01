@@ -9,20 +9,19 @@ import { UserService } from '../user.service';
 })
 export class UserComponent implements OnInit {
   profils;
-  imageUrl:string="assets/images/sonatel.jpeg";
-  fileToUpload:File=null;
+  imageUrl: string = "assets/images/sonatel.jpeg";
+  fileToUpload: File = null;
 
-  constructor(private users:UserService )
-    {
+  constructor(private users: UserService) {
 
   }
 
   ngOnInit() {
     this.users.getAllprofil().subscribe(
-      res=>{ 
-      console.log(res);
-      this.profils=res;
-      }, err=>{
+      res => {
+        console.log(res); 
+        this.profils = res;
+      }, err => {
         console.log(err);
       }
     )
@@ -39,18 +38,18 @@ export class UserComponent implements OnInit {
     reader.readAsDataURL(this.fileToUpload);
   }
 
-  onsubmit (data:any){
+  onsubmit(data: any) {
     console.log(data);
     console.log(this.fileToUpload);
     this.users.ajoutuser(data, this.fileToUpload)
-    .subscribe(
-      data=>{
-        console.log('Utilisateur créer')
+      .subscribe(
+        data => {
+          console.log('Utilisateur créer')
 
-      },err=>{
-        console.log(err);
-      }
-    )
+        }, err => {
+          console.log(err);
+        }
+      )
   }
 
 }

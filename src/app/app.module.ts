@@ -12,6 +12,8 @@ import { FormsModule } from '@angular/forms';
 import { AuthentificationService } from './authentification.service';
 import { PartenaireService } from './partenaire.service';
 import { UserService } from './user.service';
+import { UtilisateurComponent } from './utilisateur/utilisateur.component';
+import { UtilisateurService } from './utilisateur.service';
 
 
 @NgModule({
@@ -20,14 +22,15 @@ import { UserService } from './user.service';
     UserComponent,
     PartenaireComponent,
     CompteComponent,
-    LoginComponent
+    LoginComponent,
+    UtilisateurComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule, HttpClientModule, FormsModule
   ],
   providers: [
-    AuthentificationService, PartenaireService, UserService
+    AuthentificationService, PartenaireService, UserService, UtilisateurService
   ],
   bootstrap: [AppComponent]
 })

@@ -1,0 +1,126 @@
+ <div class="container-fluid">
+
+  <form [formGroup]="envoie" (ngSubmit)="onsubmit(envoie.value)">
+<div class="row">
+  <div class="col-md-2"></div>
+  <div class="col-md-12 col-lg-4 mb-4 align-items-stretch">
+    <div class="card border-0 rounded h-100">
+      <div class="card-title mb-1 p-3">
+        <h5>Envoyeur</h5>
+      </div>
+      <div class="card-body">
+         
+        <div class="form-group">
+          <label for="exampleFormControlInput1">Nom</label>
+          <input type="texte" class="form-control  rounded" formControlName="nomExp" name="nomExp"
+            placeholder="Nom Envoyeur">
+            <div *ngFor="let error of erreurmes.nomExp">
+              <div *ngIf="envoie.get('nomExp').hasError(error.type) && 
+                      (envoie.get('nomExp').dirty || (envoie.get('nomExp').touched))">
+                {{error.message}}
+              </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+          <label for="exampleFormControlInput1">Prenom</label>
+          <input type="texte" class="form-control  rounded" formControlName="prenomExp" name="prenomExp"
+            placeholder="Prenom">
+            <div *ngFor="let error of erreurmes.prenomExp">
+              <div *ngIf="envoie.get('prenomExp').hasError(error.type) && 
+                      (envoie.get('prenomExp').dirty || (envoie.get('prenomExp').touched))">
+                {{error.message}}
+              </div>
+            </div>
+        </div>
+        <div class="form-group">
+          <label for="exampleFormControlInput1">Telephone</label>
+          <input type="texte" class="form-control  rounded" formControlName="telephonExp" name="telephonExp"
+            placeholder="Telephone">
+            <div *ngFor="let error of erreurmes.telephonExp">
+              <div *ngIf="envoie.get('telephonExp').hasError(error.type) && 
+                      (envoie.get('telephonExp').dirty || (envoie.get('telephonExp').touched))">
+                {{error.message}}
+              </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+          <label for="exampleFormControlInput1">Numrero de Piece</label>
+          <input type="texte" class="form-control  rounded" formControlName="numeropieceEXp" name="numeropieceEXp"
+            placeholder="Numrero de Piece">
+            <div *ngFor="let error of erreurmes.numeropieceEXp">
+              <div *ngIf="envoie.get('numeropieceEXp').hasError(error.type) && 
+                      (envoie.get('numeropieceEXp').dirty || (envoie.get('numeropieceEXp').touched))">
+                {{error.message}}
+              </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+          <label for="exampleFormControlInput1">Montant</label>
+          <input type="number" class="form-control  rounded" formControlName="montant" name="montant"
+            placeholder="Montant">
+            <div *ngFor="let error of erreurmes.montant">
+              <div *ngIf="envoie.get('montant').hasError(error.type) && 
+                      (envoie.get('montant').dirty || (envoie.get('montant').touched))">
+                {{error.message}}
+              </div>
+            </div>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+  <div class="col-md-12 col-lg-4 mb-4 align-items-stretch">
+    <div class="card border-0 rounded-0 h-100">
+      <div class="card-title mb-1 p-3">
+        <h5>Beneficiaire</h5>
+      </div>
+      <div class="card-body">
+
+
+
+        <div class="form-group">
+          <label for="exampleFormControlInput1">Nom</label>
+          <input type="texte" class="form-control  rounded" formControlName="nomBen" name="nomBen" placeholder="Nom Bénéficiaire">
+          <div *ngFor="let error of erreurmes.nomBen">
+            <div *ngIf="envoie.get('nomBen').hasError(error.type) && 
+                    (envoie.get('nomBen').dirty || (envoie.get('nomBen').touched))">
+              {{error.message}}
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="exampleFormControlInput1">Prenom</label>
+          <input type="texte" class="form-control  rounded" name="prenomBen" formControlName="prenomBen"
+            placeholder="prenom Bénéficiaire">
+            <div *ngFor="let error of erreurmes.prenomBen">
+              <div *ngIf="envoie.get('prenomBen').hasError(error.type) && 
+                      (envoie.get('prenomBen').dirty || (envoie.get('prenomBen').touched))">
+                {{error.message}}
+              </div>
+            </div>
+        </div>
+        <div class="form-group">
+          <label for="exampleFormControlInput1">Telephone</label>
+          <input type="texte" class="form-control  rounded" name="telephonBen" formControlName="telephonBen"
+            placeholder="Telephone">
+            <div *ngFor="let error of erreurmes.telephonBen">
+              <div *ngIf="envoie.get('telephonBen').hasError(error.type) && 
+                      (envoie.get('telephonBen').dirty || (envoie.get('telephonBen').touched))">
+                {{error.message}}
+              </div>
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-lightning rounded mb-2 mr-2">Envoyer</button>
+
+      </div>
+    </div>
+  </div>
+</div>
+</form>
+</div>

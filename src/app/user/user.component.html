@@ -4,39 +4,51 @@
 <div class="row">
 <div class="col-md-4"></div>
 <div class="col-md-4">
-<form #imageForm=ngForm (ngSubmit)="onsubmit(imageForm.value)">
+<form [formGroup]="user" (ngSubmit)="onsubmit(user.value)">
   <div class="form-group row col-6 col-md-push-4 offset-md-3">
     <label for="inputUsername" class="col-sm-2 col-form-label">Username</label>
     <div class="col">
-      <input type="text" #username ngModel required="required" name="username" class="form-control" id="username"
+      <input type="text" formControlName="username" name="username" class="form-control" id="username"
         placeholder="Username">
+        <div *ngFor="let error of erreurmes.username">
+          <div *ngIf="user.get('username').hasError(error.type) && 
+          (user.get('username').dirty || (user.get('username').touched))">
+              {{error.message}}
+          </div>
+        </div>
     </div>
   </div>
   <div class="form-group row col-6 col-md-push-4 offset-md-3">
     <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
     <div class="col">
-      <input type="password" #password ngModel required="required" name="password" class="form-control" id="inputPassword3"
+      <input type="password"  name="password" class="form-control" id="inputPassword3"
         placeholder="Taper Votre Password">
     </div>
   </div>
   <div class="form-group row col-6 col-md-push-4 offset-md-3">
     <label for="inputPassword3" class="col-sm-2 col-form-label">Nom Complet</label>
     <div class="col">
-      <input type="text" required="required" #nomcomplet ngModel name="nomcomplet" class="form-control" id="inputPassword3"
+      <input type="text"  name="nomcomplet" class="form-control" id="inputPassword3"
         placeholder="Taper Votre nom">
     </div>
   </div>
   <div class="form-group row col-6 col-md-push-4 offset-md-3">
     <label for="inputPassword3" class="col-sm-2 col-form-label">Telephone</label>
     <div class="col">
-      <input type="number" #telephone ngModel required="required" min=700000000 max=900000000 name="telephone"
+      <input formControlName="telephone"  name="telephone"
         class="form-control" id="inputTelephone" placeholder="Téléphone">
+        <div *ngFor="let error of erreurmes.telephone">
+          <div *ngIf="user.get('telephone').hasError(error.type) && 
+                  (user.get('telephone').dirty || (user.get('telephone').touched))">
+            {{error.message}}
+          </div>
+        </div>
     </div>
   </div>
   <div class="form-group row col-6 col-md-push-4 offset-md-3">
     <label for="inputPassword3" class="col-sm-2 col-form-label">Rôle</label>
     <div class="col">
-      <select class="form-control" #profil ngModel name="profil">
+      <select class="form-control"  name="profil">
         <option *ngFor="let pr of profils" value="{{pr.id}}">{{pr.libelle}}</option>
 
       </select>
@@ -52,14 +64,14 @@
   <div class="form-group row col-6 col-md-push-4 offset-md-3">
     <label for="inputPassword3" class="col-sm-2 col-form-label">Photo</label>
     <div class="col">
-      <input name="photo" #photo ngModel type="file" #Image accept="image/"
+      <input name="photo"  type="file" #Image accept="image/"
         (change)="handleFileInput($event.target.files)">
     </div>
   </div>
   <div class="form-group row col-6 col-md-push-4 offset-md-3">
     <div class="col">
       <button type="submit" name="valider" class="btn btn-primary"
-        [disabled]="Image.value=='' || !imageForm.valid">AJOUTER</button>
+        [disabled]="!user.valid ">AJOUTER</button>
     </div>
   </div>
 </form>

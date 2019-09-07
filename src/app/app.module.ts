@@ -8,7 +8,7 @@ import { PartenaireComponent } from './partenaire/partenaire.component';
 import { CompteComponent } from './compte/compte.component';
 import { from } from 'rxjs';
 import { LoginComponent } from './login/login.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AuthentificationService } from './authentification.service';
 import { PartenaireService } from './partenaire.service';
 import { UserService } from './user.service';
@@ -16,6 +16,10 @@ import { UtilisateurComponent } from './utilisateur/utilisateur.component';
 import { UtilisateurService } from './utilisateur.service';
 import { DepotComponent } from './depot/depot.component';
 import { DepotService } from './depot.service';
+import { EnvoieComponent } from './envoie/envoie.component';
+import { RetraitComponent } from './retrait/retrait.component';
+import { TransactionService } from './transaction.service';
+
 
 
 @NgModule({
@@ -26,14 +30,22 @@ import { DepotService } from './depot.service';
     CompteComponent,
     LoginComponent,
     UtilisateurComponent,
-    DepotComponent
+    DepotComponent,
+    EnvoieComponent,
+    RetraitComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule, HttpClientModule, FormsModule
+    AppRoutingModule, HttpClientModule, 
+    FormsModule, ReactiveFormsModule
   ],
   providers: [
-    AuthentificationService, PartenaireService, UserService, UtilisateurService, DepotService
+    AuthentificationService,
+     PartenaireService,
+     UserService,
+      UtilisateurService,
+       DepotService,
+       TransactionService
   ],
   bootstrap: [AppComponent]
 })

@@ -16,13 +16,13 @@ export class UtilisateurService {
     return this.http.get<any>(this.ajoututil, { headers: headers })
   }
 
-  adduser(util, fileToUpload){
+  adduser(util, fileToUpload) {
     var headers = new HttpHeaders().set("Authorization", "Bearer " + localStorage.getItem('token'));
     const host = "http://localhost:8000/api/admin";
     const formData: FormData = new FormData();
     formData.append('RS', util.RS);
     formData.append('NINEA', util.NINEA);
-    formData.append('Adresse', util.Adresse); 
+    formData.append('Adresse', util.Adresse);
     formData.append('username', util.username);
     formData.append('nomEntreprise', util.nomEntreprise);
     formData.append('nomcomplet', util.nomcomplet);

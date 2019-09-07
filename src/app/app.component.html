@@ -1,16 +1,17 @@
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="#">Transfert</a>
+      <a class="navbar-brand" href="#">ACCEUIL</a>
     </div>
     <ul class="nav navbar-nav">
       <li class="dropdown" *ngIf="isAuthenticated()">
-        <a class="dropdown-toggle" data-toggle="dropdown" href="#">LISTE
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">TRANSFERT
           <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li *ngIf="isAdmin()"><a routerLink="/partenaire">Lister Partenaire</a></li>
             <li *ngIf="isUser()"><a routerLink="/depot">Faire un depot</a></li>
             <li *ngIf="isUser()"><a routerLink="/envoie">Envoyer</a></li>
+            <li *ngIf="isUser()"><a routerLink="/retrait">Retrait</a></li>
+
 
           
           </ul>
@@ -19,8 +20,9 @@
         <a class="dropdown-toggle" data-toggle="dropdown" href="#">ADMIN
           <span class="caret"></span></a>
         <ul class="dropdown-menu">
-          <li *ngIf="isAdmin()"><a routerLink="/user">Ajout User</a></li>
-          <li *ngIf="isAdmin()"><a routerLink="/utilisateur">Ajout Utilisateur</a></li>
+        <li *ngIf="isAdmin()"><a routerLink="/partenaire">Lister Partenaire</a></li>
+        <li *ngIf="isAdmin()"><a routerLink="/user">Ajout User</a></li>
+        <li *ngIf="isAdmin()"><a routerLink="/utilisateur">Ajout Utilisateur</a></li>
 
         </ul>
       </li>

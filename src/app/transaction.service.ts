@@ -30,8 +30,8 @@ export class TransactionService {
     const host = "http://localhost:8000/api/retrait";
     const formData: FormData = new FormData();
     formData.append('code', retrait.code);
-    formData.append('typePieceBen', retrait.typePieceb);
-    formData.append('numeroPieceBen', retrait.numeroPieceb);
+    formData.append('typepieceBen', retrait.typepieceBen);
+    formData.append('numeropieceBen', retrait.numeropieceBen);
     return this.http.post(host, formData, {headers:headers});
   }
 

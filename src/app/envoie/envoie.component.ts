@@ -19,7 +19,7 @@ export class EnvoieComponent implements OnInit {
     this.enve.envoie(data,)
       .subscribe(
         data => {
-          console.log('Envoie effectué ')
+          console.log(' Envoie effectué ')
 
         }, err => {
           console.log(err);

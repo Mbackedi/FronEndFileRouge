@@ -21,8 +21,8 @@
           <span class="caret"></span></a>
         <ul class="dropdown-menu">
         <li *ngIf="isAdmin()"><a routerLink="/partenaire">Lister Partenaire</a></li>
-        <li *ngIf="isAdmin()"><a routerLink="/user">Ajout User</a></li>
-        <li *ngIf="isAdmin()"><a routerLink="/utilisateur">Ajout Utilisateur</a></li>
+        <li *ngIf="isUser()"><a routerLink="/user">Ajout User</a></li>
+        <li *ngIf="isAdmin()"><a routerLink="/utilisateur">Ajout Partenaire</a></li>
 
         </ul>
       </li>

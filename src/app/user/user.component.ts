@@ -55,7 +55,13 @@ export class UserComponent implements OnInit {
    user=new FormGroup({
      username: new FormControl ('', [Validators.required, Validators.minLength(5)]),
      telephone: new FormControl('', [Validators.required, Validators.minLength(9),Validators.maxLength(9),Validators.pattern(
-       /^7[0678]([0-9][0-9][0-9][0-9][0-9][0-9][0-9])/)])
+       /^7[0678]([0-9][0-9][0-9][0-9][0-9][0-9][0-9])/)]),
+     plainPassword: new FormControl('', [Validators.required, Validators.minLength(5)]), 
+     nomcomplet: new FormControl('', [Validators.required, Validators.minLength(5)]),
+     profil: new FormControl('', [Validators.required])
+
+
+
 
    })
 
@@ -70,7 +76,15 @@ export class UserComponent implements OnInit {
        { type: 'maxlength', message: 'Veuilez saisir au maximum 9 chiffres' },
        { type: 'pattern', message: 'Veuilez renseigner un numéro correct' }
 
-     ]
+     ],
+   
+       'plainPassword': [
+         { type: 'required', message: 'Ce champ est obligatoire' },
+       ],
+        
+     'nomcomplet': [
+       { type: 'required', message: 'Ce champ est obligatoire' },
+     ],
 
    }
 }

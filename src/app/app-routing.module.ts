@@ -7,6 +7,7 @@ import { UtilisateurComponent } from './utilisateur/utilisateur.component';
 import { DepotComponent } from './depot/depot.component';
 import { EnvoieComponent } from './envoie/envoie.component';
 import { RetraitComponent } from './retrait/retrait.component';
+import { ListeruserComponent } from './listeruser/listeruser.component';
 
 
 const routes: Routes = [
@@ -16,7 +17,8 @@ const routes: Routes = [
   { path: "utilisateur", component:UtilisateurComponent},
   { path: "depot", component:DepotComponent},
   { path: "envoie", component:EnvoieComponent},
-  { path: "retrait", component:RetraitComponent}
+  { path: "retrait", component:RetraitComponent},
+  { path: "listeruser",component:ListeruserComponent}
 
 ];
 

@@ -19,6 +19,8 @@ import { DepotService } from './depot.service';
 import { EnvoieComponent } from './envoie/envoie.component';
 import { RetraitComponent } from './retrait/retrait.component';
 import { TransactionService } from './transaction.service';
+import { ListeruserComponent } from './listeruser/listeruser.component';
+import { ListeruserService } from './listeruser.service';
 
 
 
@@ -32,7 +34,8 @@ import { TransactionService } from './transaction.service';
     UtilisateurComponent,
     DepotComponent,
     EnvoieComponent,
-    RetraitComponent
+    RetraitComponent,
+    ListeruserComponent
   ],
   imports: [
     BrowserModule,
@@ -45,7 +48,8 @@ import { TransactionService } from './transaction.service';
      UserService,
       UtilisateurService,
        DepotService,
-       TransactionService
+       TransactionService,
+       ListeruserService
   ],
   bootstrap: [AppComponent]
 })

@@ -13,10 +13,10 @@
 
                         <div class="form-group">
                             <label for="exampleFormControlInput1">Code</label>
-                            <input type="texte" class="form-control  rounded" formcontrolname="code" placeholder="Code">
+                            <input type="texte" class="form-control  rounded" formControlName="code" placeholder="Code">
                             <div *ngFor="let error of erreurmes.code">
                                 <div *ngIf="retrait.get('code').hasError(error.type) &&
-                                      (retrait.get('code').dirty || (retrait.get('code').touched))">
+                                  (retrait.get('code').dirty || (retrait.get('code').touched))">
                                     {{error.message}}
                                 </div>
                             </div>
@@ -24,10 +24,10 @@
 
                         <div class="form-group">
                             <label for="exampleFormControlInput1">Type Piece</label>
-                            <input type="texte" class="form-control  rounded" formcontrolname="typepieceBen" placeholder="typepieceBen">
+                            <input type="texte" class="form-control  rounded" formControlName="typepieceBen" placeholder="typepieceBen">
                             <div *ngFor="let error of erreurmes.typepieceBen">
                                 <div *ngIf="retrait.get('typepieceBen').hasError(error.type) &&
-                                  (retrait.get('typepieceBen').dirty || (retrait.get('numeropieceBen').touched))">
+                               (retrait.get('typepieceBen').dirty || (retrait.get('numeropieceBen').touched))">
                                     {{error.message}}
                                 </div>
                             </div>
@@ -35,10 +35,10 @@
 
                         <div class="form-group">
                             <label for="exampleFormControlInput1">Numéro Piece</label>
-                            <input type="number" class="form-control  rounded" formcontrolname="numeropieceBen" placeholder="numeropieceBen">
+                            <input type="number" class="form-control  rounded" formControlName="numeropieceBen" placeholder="numeropieceBen">
                             <div *ngFor="let error of erreurmes.numeropieceBen">
                                 <div *ngIf="retrait.get('numeropieceBen').hasError(error.type) &&
-                                 (retrait.get('numeropieceBen').dirty || (retrait.get('numeropieceBen').touched))">
+                              (retrait.get('numeropieceBen').dirty || (retrait.get('numeropieceBen').touched))">
                                     {{error.message}}
                                 </div>
                             </div>

@@ -7,7 +7,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 export class TransactionService {
 
 
-  constructor(private http:HttpClient) { }
+  constructor(private http: HttpClient) { }
 
   envoie(envoye) {
     var headers = new HttpHeaders().set("Authorization", "Bearer " + localStorage.getItem('token'));
@@ -22,9 +22,9 @@ export class TransactionService {
     formData.append('nomBen', envoye.nomBen);
     formData.append('prenomBen', envoye.prenomBen);
     formData.append('telephonBen', envoye.telephonBen);
-    return this.http.post(host, formData, {headers:headers});
+    return this.http.post(host, formData, { headers: headers });
   }
-   
+
   retrait(retrait) {
     var headers = new HttpHeaders().set("Authorization", "Bearer " + localStorage.getItem('token'));
     const host = "http://localhost:8000/api/retrait";
@@ -32,7 +32,7 @@ export class TransactionService {
     formData.append('code', retrait.code);
     formData.append('typepieceBen', retrait.typepieceBen);
     formData.append('numeropieceBen', retrait.numeropieceBen);
-    return this.http.post(host, formData, {headers:headers});
+    return this.http.post(host, formData, { headers: headers });
   }
 
 }

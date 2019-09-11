@@ -6,7 +6,7 @@
             <div class="col-md-12 col-lg-4 mb-4 align-items-stretch">
                 <div class="card border-0 rounded h-100">
                     <div class="card-title mb-1 p-3">
-                        <h5>Retrait</h5>
+                        <h3>Retrait</h3>
                     </div>
                     <div class="card-body">
 
@@ -16,7 +16,7 @@
                             <input type="texte" class="form-control  rounded" formcontrolname="code" placeholder="Code">
                             <div *ngFor="let error of erreurmes.code">
                                 <div *ngIf="retrait.get('code').hasError(error.type) &&
-                                                                                                      (retrait.get('code').dirty || (retrait.get('code').touched))">
+                                      (retrait.get('code').dirty || (retrait.get('code').touched))">
                                     {{error.message}}
                                 </div>
                             </div>
@@ -27,7 +27,7 @@
                             <input type="texte" class="form-control  rounded" formcontrolname="typepieceBen" placeholder="typepieceBen">
                             <div *ngFor="let error of erreurmes.typepieceBen">
                                 <div *ngIf="retrait.get('typepieceBen').hasError(error.type) &&
-                                                                                         (retrait.get('typepieceBen').dirty || (retrait.get('numeropieceBen').touched))">
+                                  (retrait.get('typepieceBen').dirty || (retrait.get('numeropieceBen').touched))">
                                     {{error.message}}
                                 </div>
                             </div>
@@ -38,7 +38,7 @@
                             <input type="number" class="form-control  rounded" formcontrolname="numeropieceBen" placeholder="numeropieceBen">
                             <div *ngFor="let error of erreurmes.numeropieceBen">
                                 <div *ngIf="retrait.get('numeropieceBen').hasError(error.type) &&
-                                                                                                      (retrait.get('numeropieceBen').dirty || (retrait.get('numeropieceBen').touched))">
+                                 (retrait.get('numeropieceBen').dirty || (retrait.get('numeropieceBen').touched))">
                                     {{error.message}}
                                 </div>
                             </div>

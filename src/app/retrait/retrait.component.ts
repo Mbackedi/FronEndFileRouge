@@ -11,7 +11,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 })
 export class RetraitComponent implements OnInit {
 
-  constructor(private retre:TransactionService) { }
+  constructor(private retre: TransactionService) { }
 
   ngOnInit() {
   }
@@ -30,14 +30,14 @@ export class RetraitComponent implements OnInit {
   }
 
   retrait = new FormGroup({
-   
+
     code: new FormControl('', [Validators.required, Validators.minLength(9), Validators.maxLength(9), Validators.pattern(
       /^7[0678]([0-9][0-9][0-9][0-9][0-9][0-9][0-9])/)]),
     typepieceBen: new FormControl('', [Validators.required, Validators.minLength(12), Validators.maxLength(9), Validators.pattern(
       /^7[0678]([0-9][0-9][0-9][0-9][0-9][0-9][0-9])/)]),
     numeropieceBen: new FormControl('', [Validators.required, Validators.minLength(12), Validators.maxLength(9), Validators.pattern(
       /^7[0678]([0-9][0-9][0-9][0-9][0-9][0-9][0-9])/)]),
-   
+
   })
 
   erreurmes = {

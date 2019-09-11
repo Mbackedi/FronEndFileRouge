@@ -6,8 +6,10 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class DepotService {
-  public deposer: string = "http://localhost:8000/api/depot"; 
-  public compte: string = "http://localhost:8000/api/listercompte"; 
+  public deposer: string = "http://localhost:8000/api/depot";
+  public compte: string = "http://localhost:8000/api/listercompte";
+  public cherchercompte: string = "http://localhost:8000/api/cherchercompte";
+
 
   constructor(private http: HttpClient) { }
 
@@ -29,4 +31,10 @@ export class DepotService {
     var headers = new HttpHeaders().set("Authorization", "Bearer " + localStorage.getItem('token'));
     return this.http.get<any>(this.compte, { headers: headers })
   }
+
+  recherchercompte(data): Observable<any[]> {
+    var headers = new HttpHeaders().set("Authorization", "Bearer " + localStorage.getItem('token'));
+    return this.http.post<any>(this.cherchercompte, data, { headers: headers })
+  }
+
 }

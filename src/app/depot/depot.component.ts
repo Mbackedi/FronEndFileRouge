@@ -7,18 +7,20 @@ import { DepotService } from '../depot.service';
   styleUrls: ['./depot.component.css']
 })
 export class DepotComponent implements OnInit {
-comptes;
-  constructor(private deposer:DepotService) { }
+  comptes;
+  compt = [];
+  depot = [];
+  constructor(private deposer: DepotService) { }
 
   ngOnInit() {
-    this.deposer.getAllcompte().subscribe(
-      res => {
-        console.log(res);
-        this.comptes = res;
-      }, err => {
-        console.log(err);
-      }
-    )
+    /*     this.deposer.getAllcompte().subscribe(
+          res => {
+            console.log(res);
+            this.comptes = res;
+          }, err => {
+            console.log(err);
+          }
+        ) */
 
   }
 
@@ -28,6 +30,20 @@ comptes;
       .subscribe(
         data => {
           console.log('Depot effectué ')
+
+        }, err => {
+          console.log(err);
+        }
+      )
+  }
+
+  submitcompte(data: any) {
+    console.log(data);
+    this.deposer.recherchercompte(data)
+      .subscribe(
+        data => {
+          console.log('Code valide ')
+          this.compt = data;
 
         }, err => {
           console.log(err);

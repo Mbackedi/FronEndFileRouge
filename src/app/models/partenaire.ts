@@ -1,8 +1,8 @@
 export interface IPartenaire {
     id: number;
-    nom_entreprise: string;
-    rs: string;
-    ninea: string;
-    adresse: string;
-    statut: string;
+    nomEntreprise: string;
+    RS: string;
+    NINEA: string;
+    Adresse: string;
+    Statut: string;
 }

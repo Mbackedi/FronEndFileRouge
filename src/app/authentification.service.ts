@@ -36,7 +36,7 @@ export class AuthentificationService {
   }
 
   isAdmin() {
-    return this.roles.indexOf('ROLE_SUPER_ADMIN') >= 0; 
+    return this.roles.indexOf('ROLE_SUPER_ADMIN') >= 0;
   }
 
   isUser() {

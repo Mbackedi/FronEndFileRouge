@@ -44,12 +44,10 @@ export class RetraitComponent implements OnInit {
 
     'code': [
       { type: 'required', message: 'le champ code est obligatoire' },
-      { type: 'pattern', message: 'Veuilez renseigner un code correct' }
     ],
 
     'typepieceBen': [
       { type: 'required', message: 'Le type de piece est obligatoire' },
-      { type: 'minlength', message: 'Veuilez saisir des numeros corrects' },
 
     ],
 

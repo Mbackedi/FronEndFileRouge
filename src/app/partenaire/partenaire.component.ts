@@ -12,7 +12,7 @@ export class PartenaireComponent implements OnInit {
 
   constructor(private parteService: PartenaireService, private router: Router) { }
   partenaires = [];
-  ngOnInit(): void {
+  ngOnInit(){
 
     this.parteService.getAllpartenaire()
       .subscribe(
@@ -20,6 +20,7 @@ export class PartenaireComponent implements OnInit {
         res => this.partenaires = res,
         err => {
           console.log(this.partenaires)
+         
           if (err instanceof HttpErrorResponse) {
             if (err.status === 401) {
               this.router.navigate(['/login'])

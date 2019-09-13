@@ -13,12 +13,12 @@ import { ListeruserComponent } from './listeruser/listeruser.component';
 const routes: Routes = [
   { path: "user", component: UserComponent },
   { path: "login", component: LoginComponent },
-  { path: "partenaire", component: PartenaireComponent},   
-  { path: "utilisateur", component:UtilisateurComponent},
-  { path: "depot", component:DepotComponent},
-  { path: "envoie", component:EnvoieComponent},
-  { path: "retrait", component:RetraitComponent},
-  { path: "listeruser",component:ListeruserComponent}
+  { path: "partenaire", component: PartenaireComponent },
+  { path: "utilisateur", component: UtilisateurComponent },
+  { path: "depot", component: DepotComponent },
+  { path: "envoie", component: EnvoieComponent },
+  { path: "retrait", component: RetraitComponent },
+  { path: "listeruser", component: ListeruserComponent }
 
 ];
 

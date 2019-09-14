@@ -22,9 +22,19 @@ export class AppComponent implements OnInit {
   isAdmin() {
     return this.authService.isAdmin();
   }
+
   isUser() {
     return this.authService.isUser();
   }
+
+  isParte() {
+    return this.authService.isParte();
+  }
+
+  isCais() {
+    return this.authService.isCais();
+  }
+
   isAuthenticated(){
     return this.authService.isAuthenticated();
   }

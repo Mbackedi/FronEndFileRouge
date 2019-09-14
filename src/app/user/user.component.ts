@@ -9,7 +9,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
   styleUrls: ['./user.component.css']
 })
 export class UserComponent implements OnInit {
-  profils;
+  profils=[];
   imageUrl: string = "assets/images/sonatel.jpeg";
   fileToUpload: File = null;
 

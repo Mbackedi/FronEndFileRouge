@@ -43,8 +43,15 @@ export class AuthentificationService {
     return this.roles.indexOf('ROLE_USER') >= 0;
   }
 
+  isParte() {
+    return this.roles.indexOf('ROLE_ADMIN') >= 0;
+  }
+  isCais() {
+    return this.roles.indexOf('ROLE_CAISSIER') >= 0;
+  }
+
   isAuthenticated() {
-    return this.roles && (this.isAdmin() || this.isUser());
+    return this.roles && (this.isAdmin() || this.isUser() || this.isParte() || this.isCais());
   }
 
   loadToken() {

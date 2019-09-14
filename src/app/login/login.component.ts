@@ -31,5 +31,8 @@ export class LoginComponent implements OnInit {
   isUser() {
     return this.authService.isUser();
   }
+  isParte() {
+    return this.authService.isParte();
+  }
 
 }

@@ -5,10 +5,10 @@
     </div>
     <ul class="nav navbar-nav">
       <li class="dropdown" *ngIf="isAuthenticated()">
-        <a class="dropdown-toggle" data-toggle="dropdown" href="#">TRANSFERT
+        <a *ngIf="isCais() || isUser()"class="dropdown-toggle" data-toggle="dropdown" href="#">TRANSFERT
           <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li *ngIf="isUser()"><a routerLink="/depot">Faire un depot</a></li>
+            <li *ngIf="isCais()"><a routerLink="/depot">Faire un depot</a></li>
             <li *ngIf="isUser()"><a routerLink="/envoie">Envoyer</a></li>
             <li *ngIf="isUser()"><a routerLink="/retrait">Retrait</a></li>
 
@@ -16,12 +16,12 @@
 
       </li>
       <li class="dropdown" *ngIf="isAuthenticated()">
-        <a class="dropdown-toggle" data-toggle="dropdown" href="#">ADMIN
+        <a *ngIf="isAdmin() || isParte()"class="dropdown-toggle" data-toggle="dropdown" href="#">ADMIN
           <span class="caret"></span></a>
         <ul class="dropdown-menu">
         <li *ngIf="isAdmin()"><a routerLink="/partenaire">Lister Partenaire</a></li>
         <li *ngIf="isAdmin()"><a routerLink="/listeruser">Lister Utilisateur</a></li>
-        <li *ngIf="isUser()"><a routerLink="/user">Ajout User</a></li>
+        <li *ngIf="isParte()"><a routerLink="/user">Ajout User</a></li>
         <li *ngIf="isAdmin()"><a routerLink="/utilisateur">Ajout Partenaire</a></li>
 
         </ul>

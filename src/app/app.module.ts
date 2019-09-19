@@ -21,6 +21,8 @@ import { RetraitComponent } from './retrait/retrait.component';
 import { TransactionService } from './transaction.service';
 import { ListeruserComponent } from './listeruser/listeruser.component';
 import { ListeruserService } from './listeruser.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialModule} from './material/material.module'
 
 
 
@@ -40,7 +42,9 @@ import { ListeruserService } from './listeruser.service';
   imports: [
     BrowserModule,
     AppRoutingModule, HttpClientModule, 
-    FormsModule, ReactiveFormsModule
+    FormsModule, ReactiveFormsModule,
+     BrowserAnimationsModule,
+    MaterialModule
   ],
   providers: [
     AuthentificationService,

@@ -2,14 +2,7 @@
     <div class="panel-heading">Liste des partenaires</div>
     <div class="panel-body">
         <table class="table table-dark">
-            <tr>
-                <th>id</th>
-                <th>nom_entreprise</th>
-                <th>rs</th>
-                <th>ninea</th>
-                <th>adresse</th>
-                <th>statut</th>
-            </tr>
+          
             <tr *ngFor="let part of partenaires">
                 <td>{{part.id}}</td>
                 <td>{{part.nomEntreprise}}</td>
@@ -23,3 +16,45 @@
         </table>
     </div>
 </div>
+
+<mat-form-field>
+    <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+</mat-form-field>
+
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+    <!-- Position Column -->
+    <ng-container matColumnDef=" nomEntreprise">
+        <th mat-header-cell *matHeaderCellDef> NOM ENTREPRISE </th>
+        <td mat-cell *matCellDef="let element"> {{element.nomEntreprise}} </td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="RS">
+        <th mat-header-cell *matHeaderCellDef> RAISON SOCIALE </th>
+        <td mat-cell *matCellDef="let element"> {{element.RS}} </td>
+    </ng-container>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="NINEA">
+        <th mat-header-cell *matHeaderCellDef> NINEA </th>
+        <td mat-cell *matCellDef="let element"> {{element.NINEA}} </td>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="Adresse">
+        <th mat-header-cell *matHeaderCellDef> ADRESSSE </th>
+        <td mat-cell *matCellDef="let element"> {{element.Adresse}} </td>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="Statut">
+        <th mat-header-cell *matHeaderCellDef> STATUT </th>
+        <td mat-cell *matCellDef="let element"> {{element.Statut}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+<mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+

@@ -12,7 +12,7 @@ export class ListeruserService {
 
   constructor(private http: HttpClient, private authService: AuthentificationService) { }
 
-  getAlluser():Observable<IUser[]>{
+  getAlluser(): Observable<IUser[]> {
     var headers = new HttpHeaders().set("Authorization", "Bearer " + localStorage.getItem('token'));
     return this.http.get<IUser[]>(this.userlist, { headers: headers })
   }

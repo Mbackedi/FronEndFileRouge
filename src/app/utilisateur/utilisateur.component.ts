@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { UtilisateurService } from '../utilisateur.service';
 
+
+
 @Component({
   selector: 'app-utilisateur',
   templateUrl: './utilisateur.component.html',
@@ -48,5 +50,6 @@ export class UtilisateurComponent implements OnInit {
         }
       )
   }
+ 
 
 }
